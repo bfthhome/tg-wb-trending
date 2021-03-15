@@ -40,7 +40,7 @@ async function saveRawJson (data) {
 
 async function sendTgMessage(data) {
   const ranks = ['🔥1.', '🔥2.', '🔥3.', '🔥4.', '🔥5.','🔥6.', '🔥7.', '🔥8.', '🔥9.', '🔥10.','🔥11.', '🔥12.', '🔥13.', '🔥14.', '🔥15.','🔥16.', '🔥17.', '🔥18.', '🔥19.', '🔥20.','🔥21.', '🔥22.']
-  const text = data.splice(1, 24).map((o, i) => {
+  const text = data.splice(1, 23).map((o, i) => {
     if (o.promotion) {
       return `💰 [${o.desc}](${o.scheme}) ${(o.desc_extr / 10000).toFixed(2)} 万`
     }
