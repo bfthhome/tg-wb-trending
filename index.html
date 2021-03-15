@@ -24,13 +24,13 @@
 </head>
 <body>
   <div id="root">
-    <h2 class="text-center m-b-20 f00-light">{{ today }} 微博热搜榜</h2>
+    <h2 class="text-center m-b-20 f00-light">{{ today }} 微博🔥热搜榜🔥</h2>
     <div class="container-xl d-flex flex-justify-center flex-wrap flex-content-start">
       <div class="p-2 col-12" v-for="item in hots">
         <div class="Box Box--condensed">
           <div class="Box-header d-flex flex-items-center">
             <h3 class="Box-title overflow-hidden flex-auto">
-             🎈 <a :href="item.url" target="_blank" class="text-gray-dark">{{ item.title }}</a>
+             🔥 <a :href="item.url" target="_blank" class="text-gray-dark"><font color="blue">{{ item.title }}</font></a>
               <span class="Counter Counter--gray-dark ml-1">
                 {{ item.category }}
               </span>
