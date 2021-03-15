@@ -1,6 +1,7 @@
 name: schedule
 
 on:
+  repository_dispatch:
   push:
     branches: [ master ]
   schedule:
