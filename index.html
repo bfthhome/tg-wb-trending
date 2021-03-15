@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-  <title>微博热搜站点</title>
+  <title>微博热搜</title>
   <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
   <style>
     html, body {
@@ -30,7 +30,7 @@
         <div class="Box Box--condensed">
           <div class="Box-header d-flex flex-items-center">
             <h3 class="Box-title overflow-hidden flex-auto">
-              <a :href="item.url" target="_blank" class="text-gray-dark">{{ item.title }}</a>
+             🎈 <a :href="item.url" target="_blank" class="text-gray-dark">{{ item.title }}</a>
               <span class="Counter Counter--gray-dark ml-1">
                 {{ item.category }}
               </span>
@@ -66,7 +66,7 @@
       },
       methods: {
         async fetchTodayHots() {
-          const res = await fetch(`https://weibo.juhe.im/api/${dayjs().format('YYYY-MM-DD')}.json`)
+          const res = await fetch(`https://tonylee.cf/api/${dayjs().format('YYYY-MM-DD')}.json`)
           const json = await res.json()
           this.hots = json
         },
