@@ -43,7 +43,7 @@ async function sendTgMessage(data) {
   const text = data.splice(1, 59).map((o, i) => {
     const containerid = encodeURIComponent(new URL(o.scheme).searchParams.get('containerid'))
     const url = `https://s.weibo.com/search?containerid=${containerid}`
-    ## const url = `https://m.weibo.cn/search?containerid=${containerid}`
+
     if (o.promotion) {
       return `💰 [${o.desc}](${url}) ${(o.desc_extr / 10000).toFixed(2)} 万`
     }
