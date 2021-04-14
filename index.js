@@ -10,8 +10,10 @@ const { Telegraf } = telegraf
 
 const TOKEN = process.env.TOKEN
 const CHANNEL_ID = process.env.CHANNEL_ID
-const TRENDING_URL = 'https://m.weibo.cn/api/container/getIndex?containerid=106003type%3D25%26t%3D3%26disable_hot%3D1%26filter_type%3Drealtimehot'
-const TRENDING_DETAIL_URL = 'https://m.s.weibo.com/topic/detail?q=%s'
+const TRENDING_URL = 'https://s.weibo.com/api/container/getIndex?containerid=106003type%3D25%26t%3D3%26disable_hot%3D1%26filter_type%3Drealtimehot'
+##const TRENDING_URL = 'https://m.weibo.cn/api/container/getIndex?containerid=106003type%3D25%26t%3D3%26disable_hot%3D1%26filter_type%3Drealtimehot'
+const TRENDING_DETAIL_URL = 'https://s.weibo.com/topic/detail?q=%s'
+##const TRENDING_DETAIL_URL = 'https://m.s.weibo.com/topic/detail?q=%s'
 
 const bot = new Telegraf(TOKEN)
 
@@ -42,7 +44,8 @@ async function sendTgMessage(data) {
   const ranks = ['🔥1.', '🔥2.', '🔥3.', '🔥4.', '🔥5.','🔥6.', '🔥7.', '🔥8.', '🔥9.', '🔥10.','🔥11.', '🔥12.', '🔥13.', '🔥14.', '🔥15.','🔥16.', '🔥17.', '🔥18.', '🔥19.', '🔥20.','🔥21.', '🔥22.', '🔥23.', '🔥24.', '🔥25.','🔥26.', '🔥27.', '🔥28.', '🔥29.', '🔥30.','🔥31.', '🔥32.', '🔥33.', '🔥34.', '🔥35.','🔥36.', '🔥37.', '🔥38.', '🔥39.', '🔥40.', '🔥41.', '🔥42.', '🔥43.', '🔥44.', '🔥45.','🔥46.', '🔥47.', '🔥48.', '🔥49.', '🔥50.', '🔥51.', '🔥52.', '🔥53.', '🔥54.', '🔥55.','🔥56.', '🔥57.', '🔥58.', '🔥59.',]
   const text = data.splice(1, 59).map((o, i) => {
     const containerid = encodeURIComponent(new URL(o.scheme).searchParams.get('containerid'))
-    const url = `https://m.weibo.cn/search?containerid=${containerid}`
+    const url = `https://s.weibo.com/search?containerid=${containerid}`
+    ## const url = `https://m.weibo.cn/search?containerid=${containerid}`
     if (o.promotion) {
       return `💰 [${o.desc}](${url}) ${(o.desc_extr / 10000).toFixed(2)} 万`
     }
