@@ -2,11 +2,12 @@ name: schedule
 
 on:
   workflow_dispatch:
-    inputs:
+  #  inputs:
   push:
     branches: [ master ]
-  schedule:
-    - cron: "0 * * * *"
+    
+  #schedule:
+  #  - cron: "0 * * * *"
 
 jobs:
   build:
